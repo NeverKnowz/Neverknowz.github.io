@@ -410,4 +410,19 @@ main {
   .scroll-container {
     display: none;
   }
+
+  .profile_image {
+  }
+  .profile_image {
+    width: 100%;
+    height: auto;
+  }
+
+  @media screen and (max-width: 600px) {
+    .profile_image {
+      width: 100%;
+      height: auto;
+    }
+  }
+
 }
