@@ -130,7 +130,6 @@ button {
 
 .link--nav {
   color: var(--txt-clr);
-  text-transform: lowercase;
   font-weight: 500;
 }
 
@@ -261,6 +260,7 @@ main {
 
 .about__role {
   margin-top: 1.2em;
+  margin-bottom: 1.2em;
 }
 
 .about__desc {
