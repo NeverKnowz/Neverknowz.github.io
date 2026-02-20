@@ -1,250 +1,439 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="dark" lang="en">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Portfolio"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Brady Hession Portfolio | Systems &amp; Security Architect</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
     <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
-            rel="stylesheet"
-    />
-    <script
-            src="https://kit.fontawesome.com/fa62c117c7.js"
-            crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="styles.css"/>
-    <title>Brady Hession</title>
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#82cf17",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glow-border:hover {
+            box-shadow: 0 0 15px rgba(13, 89, 242, 0.3);
+            border-color: rgba(13, 89, 242, 0.5);
+        }
+    </style>
 </head>
-<body class="light" id="top">
-<header class="header center">
-    <h3>
-        <a href="https://github.com/NeverKnowz/NeverKnowz.github.io" class="link" >BH</a>
-    </h3>
 
-    <nav class="nav center">
-        <ul class="nav__list center">
-            <li class="nav__list-item">
-                <a class="link link--nav" href="#projects">Projects</a>
-            </li>
-            <li class="nav__list-item">
-                <a class="link link--nav" href="#skills">Skills</a>
-            </li>
-            <li class="nav__list-item">
-                <a class="link link--nav" href="#contact">Contact</a>
-            </li>
-        </ul>
-
-        <button type="button" aria-label="toggle theme" class="btn btn--icon">
-            <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
-        </button>
-
-        <button
-                type="button"
-                aria-label="toggle navigation"
-                class="btn btn--icon nav__hamburger"
-        >
-            <i aria-hidden="true" class="fas fa-bars"></i>
-        </button>
-    </nav>
-</header>
-
-<main>
-    <!-- About -->
-    <div class="about center">
-        <h1>Hi, I am <span class="about__name">Brady Hession.</span></h1>
-        <h2 class="about__role">A Professional Nerd</h2>
-        <img class="profile_image" src="public/profile.png" alt="A picture of me, but it's broken">
-        <p class="about__desc">
-            Hello! I'm Brady Hession, a Salt Lake City, Utah native with a diverse range of passions. A tech enthusiast,
-            history buff, avid reader, and skilled programmer, my passions even span into the realms of
-            infosec and music. Currently honing my skills and building towards my goal is to establish a thriving
-            game company blending my many passions together to create the games I've always dreamed of. Alongside
-            my professional pursuits, I adventure with Esmeralda, my Dachshund, whenever possible!
-        </p>
-
-        <div class="about__contact center">
-            <a href="public/ResumeV3.pdf">
-                <span class="btn btn--outline">Resume</span>
-            </a>
-
-            <a
-                    href="https://github.com/NeverKnowz"
-                    aria-label="github"
-                    class="link link--icon"
-            >
-                <i aria-hidden="true" class="fab fa-github"></i>
-            </a>
-
-            <a
-                    href="https://linkedin.com/in/brady-sean-patrick-hession"
-                    aria-label="linkedin"
-                    class="link link--icon"
-            >
-                <i aria-hidden="true" class="fab fa-linkedin"></i>
-            </a>
-        </div>
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+        <!-- Top Navigation -->
+        <header
+            class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined text-3xl">terminal</span>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight">Brady<span
+                            class="text-primary">.Hession</span></span>
+                </div>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#arsenal">Arsenal</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#solutions">Solutions</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#path">Path</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                        </span>
+                        <span class="text-[10px] uppercase tracking-widest font-bold text-emerald-500">
+                            System Online
+                        </span>
+                    </div>
+                    <button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20"
+                        onclick="window.open('https://drive.google.com/file/d/1FpbPy2ErTfQvgybfJ0x5N5fdagoRuWXN/view?usp=sharing', '_blank')"
+                    >
+                        Download CV
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="flex-grow">
+            <!-- Hero Section -->
+            <section class="relative py-20 lg:py-32 overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(13,89,242,0.05),transparent)] pointer-events-none">
+                </div>
+                <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8">
+                        <div
+                            class="inline-block px-3 py-1 rounded bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest">
+                            Full-Stack Software Engineer
+                        </div>
+                        <h1 class="text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tighter">Professional <span
+                                class="text-primary">Nerd</span></h1>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
+                            Software Engineer with nearly a decade of experience building lean, resilient systems. I
+                            specialize in high-risk backends and minimalist architecture, driven by a 'zero-debt'
+                            philosophy: if a dependency doesn't earn its keep, it doesn't enter the codebase.
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <img src="public/gp.png" alt="..." />
+                        <!-- Background Glows -->
+                        <div class="absolute -top-10 -right-10 w-64 h-64 bg-primary/20 blur-[100px] -z-10 rounded-full">
+                        </div>
+                        <div class="absolute -bottom-10 -left-10 w-64 h-64 blur-[100px] -z-10 rounded-full bg-primary/10">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Technical Arsenal -->
+            <section class="py-20 bg-slate-50 dark:bg-slate-900/50" id="arsenal">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+                        <div>
+                            <h2 class="text-3xl font-bold mb-4">Technical Arsenal</h2>
+                            <p class="text-slate-600 dark:text-slate-400 max-w-xl">
+                                Enterprise ready technologies and methodologies I employ.
+                            </p>
+                        </div>
+                        <div class="text-primary font-mono text-sm font-bold bg-primary/10 px-4 py-2 rounded-lg border border-primary/20">
+                            CAPACITY: 100% UTILIZATION
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- React -->
+                        <div
+                            class="bg-white dark:bg-background-dark p-8 rounded-xl border border-slate-200 dark:border-slate-800 glow-border transition-all">
+                            <span class="material-symbols-outlined text-primary mb-4 text-4xl">web</span>
+                            <h3 class="text-xl font-bold mb-2">Frontend Mastery</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-6">
+                                Building modern, performant web applications using React, Vue, or minimalistic frameworks like bootstrap.
+                                Strong preference for minimalism and performance, often opting for custom solutions over heavy frameworks when appropriate.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">React</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">Vue</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">Tailwind CSS</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">Bootstrap</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">Javascript/Typescript</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">CSS</span>
+                            </div>
+                        </div>
+                        <!-- Node.js -->
+                        <div
+                            class="bg-white dark:bg-background-dark p-8 rounded-xl border border-slate-200 dark:border-slate-800 glow-border transition-all">
+                            <span
+                                class="material-symbols-outlined text-primary mb-4 text-4xl">settings_input_component</span>
+                            <h3 class="text-xl font-bold mb-2">Backend Systems</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-6">
+                               Utilizing Laravel, Java, C#, or Node.js to create secure, scalable APIs and microservices. Proficient in RESTful design, 
+                               MySQL, Postgres, and many more modern back end systems. 
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">Laravel/PHP</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">Node.js</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">C#</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">Java</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">Python</span>
+                            </div>
+                        </div>
+                        <!-- DevOps -->
+                        <div
+                            class="bg-white dark:bg-background-dark p-8 rounded-xl border border-slate-200 dark:border-slate-800 glow-border transition-all">
+                            <span class="material-symbols-outlined text-primary mb-4 text-4xl">container</span>
+                            <h3 class="text-xl font-bold mb-2">Infrastructure</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-6">
+                                Automating deployment pipelines and managing containerized applications for seamless continuous integration.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">Docker</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">AWS</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">CI/CD</span>
+                            </div>
+                        </div>
+                        <!-- Architecture -->
+                        <div
+                            class="bg-white dark:bg-background-dark p-8 rounded-xl border border-slate-200 dark:border-slate-800 glow-border transition-all">
+                            <span class="material-symbols-outlined text-primary mb-4 text-4xl">architecture</span>
+                            <h3 class="text-xl font-bold mb-2">System Design</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-6">
+                               Valuing simplicity and maintainability, I design systems with a 'zero-debt' philosophy, ensuring every component earns its place in the architecture. 
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">Microservices</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">OpenAPI</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">REST</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">Linux</span>
+                            </div>
+                        </div>
+                        <!-- Security -->
+                        <div
+                            class="bg-white dark:bg-background-dark p-8 rounded-xl border border-slate-200 dark:border-slate-800 glow-border transition-all">
+                            <span class="material-symbols-outlined text-primary mb-4 text-4xl">lock</span>
+                            <h3 class="text-xl font-bold mb-2">Security First</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-6">
+                                Integrating security best practices at every layer, from auth protocols to data encryption and vulnerability
+                                patching. It's never an afterthought, but a foundational aspect of every system I build.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">OAuth2</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">JWT</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">OWASP</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">Kali</span>
+                            </div>
+                        </div>
+                        <!-- Database -->
+                        <div
+                            class="bg-white dark:bg-background-dark p-8 rounded-xl border border-slate-200 dark:border-slate-800 glow-border transition-all">
+                            <span class="material-symbols-outlined text-primary mb-4 text-4xl">database</span>
+                            <h3 class="text-xl font-bold mb-2">Data Engineering</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-6">
+                                Logical, optimized database schemas and queries for maximum throughput and data integrity.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">Redis</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">PostgreSQL</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">Elasticsearch</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">GraphQL</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">MongoDB</span>
+                                <span class="text-[10px] font-bold bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded uppercase">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Proven Solutions -->
+            <section class="py-20" id="solutions">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold mb-4">Proven Solutions</h2>
+                        <p class="text-slate-600 dark:text-slate-400">Case studies of professional wins.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div
+                            class="group relative overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-800">
+                            <div class="aspect-video w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="E-commerce platform visualization with scaling data graphs"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1g3tyKP20J_OzI99dlEWlCfNIK4p6Lc0polYW9A4XElvQr2XZZIBlkzRJd5m4fQnuIQ-1VH9IEIOtPc3ZomdMJGXNiFfRQexIGMacfz6Z_nBmReVXvzqoa6miptm-raDB9a5NsU3GrnZ9gy2QnSouu3U5Ff_Zt19kMjBJQhAiAqXtUqURVhfPLgcLrhZOZ0V82q9nsSlu9nEG1EHAPUitIpVjoKGfMBue4ZXbKxJRNcvtmGOiBgY1v0Ll4x4UurA83WhgOUj52pzJ')">
+                            </div>
+                            <div class="p-8">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 class="text-2xl font-bold">Highspeedinternet Data managment</h3>
+                                    <span
+                                        class="text-[10px] font-bold px-2 py-1 rounded bg-primary text-white uppercase">Full-Stack</span>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                                    One of our websites (Highspeedinternet.com) was having difficulty keeping their data up to date. Our data was updated based off updates
+                                    from our telecom partners, and those updates would roll in at random intervals.  Sometimes multiple times a week.
+                                    Each of those updates, required a ticket into the developers and a script being run on the back end to take a CSV and
+                                    update all the data. I automated that entire process, by building a secure admin dashboard that allowed non technical 
+                                    users to upload the CSV and run the update script with a single click. I also implemented a notification system that 
+                                    would alert the team if any errors were encountered during the update process, as well as proper transaction handling
+                                     ensuring that data integrity was maintained at all times.  Due to the increased speed of updates, our "data-accuracy"
+                                     skyrocketted and we were able to sign millions of dollars worth of new business from smaller telecom partners.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-800">
+                            <div class="aspect-video w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                data-alt="Dashboard interface showing security metrics and data visualizations"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8wlKjnBhxlMrPpmcYg8YEohF8WSwpU4ufRS_nXTYoK7QSkoqRm6gQxJZKUC2YUwblP-i1qZ9-bUex8GxWGLebZC2z5H60NsbbwUX5qFLLPQfwqygeSJR46JzhXRAkNrwAm4x9Gk_6X2_Ac8K80B4KSoRaBFX25wHICgDZnQS6Y7VGtLQ0dH4YEE0I6_e7ljNIuevzcCFDepw8IAZGlgDwExzWHmp1tzTkKu6kMyzeDx2tu5hA4c0t--X7r82jf6CSmc4xJEJGgHbm')">
+                            </div>
+                            <div class="p-8">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 class="text-2xl font-bold">Technical Modernization</h3>
+                                    <span
+                                        class="text-[10px] font-bold px-2 py-1 rounded bg-primary text-white uppercase">Infrastructure & Security</span>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                                    Many of our front end sites were running on legacy Rackspace hosting with a Wordpress CMS.  This was a huge security risk 
+                                    and also made it difficult to implement modern features and optimizations. I led the transition away from that legacy infrastructure 
+                                    and towards a modern, containerized infrastructure.  I also implemented a custom CMS built on Laravel and Storyblok that allowed for 
+                                    more flexibility and control over our content.  This transition not only improved our security posture but also allowed us to implement new 
+                                    features and optimizations that were not possible with our old infrastructure.
+                                </p>
+                                <a class="inline-flex items-center gap-2 text-primary font-bold hover:underline"
+                                    href="#">
+                                    Read Documentation <span
+                                        class="material-symbols-outlined text-sm">open_in_new</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Professional Path -->
+            <section class="py-20 bg-slate-50 dark:bg-slate-900/50" id="path">
+                <div class="max-w-4xl mx-auto px-6">
+                    <h2 class="text-4xl font-bold mb-16 text-center">Professional Path</h2>
+                    <div class="space-y-12">
+                        <!-- Node 1 -->
+                        <div class="relative pl-8 md:pl-0">
+                            <div class="md:flex items-center">
+                                <div class="hidden md:block md:w-1/2 pr-12 text-right">
+                                    <h4 class="text-xl font-bold">Full-Stack Engineer</h4>
+                                    <p class="text-primary font-bold text-sm">Using what I've learned</p>
+                                </div>
+                                <div
+                                    class="absolute left-0 md:static md:mx-auto w-4 h-4 rounded-full bg-primary shadow-[0_0_10px_rgba(13,89,242,0.8)] z-10">
+                                </div>
+                                <div class="md:w-1/2 md:pl-12">
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm font-bold mb-1">2023 — PRESENT
+                                    </p>
+                                    <div class="md:hidden">
+                                    </div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                        After a tumultuous few years in the industry, I accpted a position at CHG Healthcare to help lead the 
+                                        transition away from Wordpress and towards a custom CMS built on Laravel and Storyblok. I am now
+                                        focused on improving overal infrastructure, migrating our legacy sites from Rackspace to modern
+                                        containerized infrastructure, and improving security across the board.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute left-[7px] md:left-1/2 top-4 bottom-[-48px] w-px bg-slate-200 dark:bg-slate-800">
+                            </div>
+                        </div>
+                        <!-- Node 2 -->
+                        <div class="relative pl-8 md:pl-0">
+                            <div class="md:flex items-center">
+                                <div class="md:w-1/2 pr-0 md:pr-12 text-left md:text-right order-2 md:order-1">
+                                    <h4 class="text-xl font-bold">Software Engineer</h4>
+                                    <p class="text-primary font-bold text-sm">Learning the rest</p>
+                                </div>
+                                <div
+                                    class="absolute left-0 md:static md:mx-auto w-4 h-4 rounded-full border-2 border-primary bg-background-light dark:bg-background-dark z-10">
+                                </div>
+                                <div class="md:w-1/2 md:pl-12 order-3">
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm font-bold mb-1">2020 — 2023</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                        On that same MarTech team, I grew and diversified my skill set by taking on more complex projects and responsibilities.
+                                        Including Infosec responsibilities.  I helped lead internal security audits, implemented secure coding practices, 
+                                        and collaborated with the security team to address vulnerabilities. This experience sparked my passion for secure 
+                                        software development and led me to pursue a career focused on building resilient, secure systems.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute left-[7px] md:left-1/2 top-4 bottom-[-48px] w-px bg-slate-200 dark:bg-slate-800">
+                            </div>
+                        </div>
+                        <!-- Node 3 -->
+                        <div class="relative pl-8 md:pl-0">
+                            <div class="md:flex items-center">
+                                <div class="hidden md:block md:w-1/2 pr-12 text-right">
+                                    <h4 class="text-xl font-bold">Jr. Engineer</h4>
+                                    <p class="text-primary font-bold text-sm">Learning the ropes</p>
+                                </div>
+                                <div
+                                    class="absolute left-0 md:static md:mx-auto w-4 h-4 rounded-full border-2 border-primary bg-background-light dark:bg-background-dark z-10">
+                                </div>
+                                <div class="md:w-1/2 md:pl-12">
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm font-bold mb-1">2017 — 2020</p>
+                                    <div class="md:hidden">
+                                    </div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                        Began by diving in the deep end. PHP, Laravel, AWS, and self managed dev ops. Worked for a
+                                        MarTech (Marketing Technology) team maintaining tools for email marketing, data analytics, 
+                                        and customer segmentation.  Cut my teeth in modern API design and also had a fair amount of front
+                                        end responsibility.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer / Contact -->
+        <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-20" id="contact">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-6">Let's build something <span
+                                class="text-primary underline underline-offset-8">awesome</span>.</h2>
+                        <p class="text-slate-600 dark:text-slate-400 mb-8 max-w-md">
+                            Currently available for architectural/security consulting and full-time opportunities in
+                            senior leadership.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 group cursor-pointer">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                    <span class="material-symbols-outlined">mail</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Email
+                                    </p>
+                                    <p class="text-lg font-medium">bradyhession@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-slate-50 dark:bg-slate-900 p-8 rounded-xl border border-slate-200 dark:border-slate-800">
+                        <h4 class="text-xl font-bold mb-6">Connect &amp; Inspect</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a class="flex flex-col items-center gap-4 p-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary transition-all"
+                                href="https://github.com/NeverKnowz" target="_blank">
+                                <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
+                                    </path>
+                                </svg>
+                                <span class="font-bold">GitHub</span>
+                            </a>
+                            <a class="flex flex-col items-center gap-4 p-6 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary transition-all"
+                                href="https://www.linkedin.com/in/brady-sean-patrick-hession/" target="_blank">
+                                <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                                    </path>
+                                </svg>
+                                <span class="font-bold">LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between gap-6 border-t border-slate-200 dark:border-slate-800 pt-10 text-slate-500 text-sm">
+                    <p>Last updated: Feb 2026 </p>
+                    <p class="font-mono bg-slate-100 dark:bg-slate-900 px-3 py-1 rounded">BUILD_v0.0.1_PROD</p>
+                </div>
+            </div>
+        </footer>
     </div>
-
-    <!-- Projects -->
-    <section id="projects" class="section projects">
-        <h2 class="section__title">Projects</h2>
-
-        <div class="projects__grid">
-            <div class="project">
-                <h3>Highspeedinternet.com</h3>
-                <p class="project__description">
-                    HighSpeedInternet.com is a comparison website that helps users find the best internet service
-                    provider
-                    in their area. I worked on the backend of the site, using Laravel and Nova to create a custom CMS
-                    for their
-                    availability data. Due to the increased speed and efficiency of the new CMS, the site was able to
-                    expand their
-                    client list, leading to over a million dollars in new revenue.
-                </p>
-                <ul class="project__stack">
-                    <li class="project__stack-item">Laravel</li>
-                    <li class="project__stack-item">Nova</li>
-                    <li class="project__stack-item">MySQL</li>
-                </ul>
-
-                <a
-                        href="https://www.highspeedinternet.com/"
-                        aria-label="live preview"
-                        class="link link--icon"
-                >
-                    <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-
-            <div class="project">
-                <h3>Inside Real Estate</h3>
-                <p class="project__description">
-                    At inside real estate, I worked on the backend of their CMS on the products team. We were
-                    responsible
-                    for all the products that were offered to the users of our platform, facebook advertising for
-                    example.
-                    During my time, I oversaw the integration with Storyblok CMS in an effort to give our marketers more
-                    freedom over the copy on the product pages.
-                </p>
-                <ul class="project__stack">
-                    <li class="project__stack-item">Vue</li>
-                    <li class="project__stack-item">Nuxt</li>
-                    <li class="project__stack-item">Storyblok</li>
-                </ul>
-
-                <a
-                        href="https://www.insiderealestate.com/"
-                        aria-label="live preview"
-                        class="link link--icon"
-                >
-                    <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-
-            <div class="project">
-                <h3>Runewerkz</h3>
-                <p class="project__description">
-                    Runewerkz is an Indi game studio that I started with my lifelong friends. We are currently working
-                    on our
-                    first game. We have participated in several game jams and have a few games on itch.io. Our goal is
-                    to reach
-                    back to the games that inspired us as kids growing up, and create games that deepen immersion at
-                    every turn.
-                </p>
-                <ul class="project__stack">
-                    <li class="project__stack-item">Unity</li>
-                    <li class="project__stack-item">Godot</li>
-                    <li class="project__stack-item">Unreal</li>
-                </ul>
-
-                <a
-                        href="https://github.com/RuneWerkz"
-                        aria-label="source code"
-                        class="link link--icon"
-                >
-                    <i aria-hidden="true" class="fab fa-github"></i>
-                </a>
-                <a
-                        href="https://Runewerkz.github.io"
-                        aria-label="live preview"
-                        class="link link--icon"
-                >
-                    <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-            <div class="project">
-                <h3>CHG Healthcare</h3>
-                <p class="project__description">
-                    CHG Healthcare is the largest provider of locum tenens staffing in the United States. I worked on
-                    their backend managing all the major customer facing applications. I was responsible for the
-                    migration of our blogs from WordPress to Storyblok CMS.
-                </p>
-                <ul class="project__stack">
-                    <li class="project__stack-item">Laravel</li>
-                    <li class="project__stack-item">Storyblok</li>
-                    <li class="project__stack-item">Blade</li>
-                    <li class="project__stack-item">Livewire</li>
-                </ul>
-                <a
-                        href="https://chghealthcare.com"
-                        aria-label="Company Website"
-                        class="link link--icon"
-                >
-                    <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section class="section skills" id="skills">
-        <h2 class="section__title">Skills</h2>
-        <ul class="skills__list">
-            <li class="skills__list-item btn btn--plain">PHP</li>
-            <li class="skills__list-item btn btn--plain">Laravel</li>
-            <li class="skills__list-item btn btn--plain">Vue</li>
-            <li class="skills__list-item btn btn--plain">CSS</li>
-            <li class="skills__list-item btn btn--plain">SCSS</li>
-            <li class="skills__list-item btn btn--plain">Javascript</li>
-            <li class="skills__list-item btn btn--plain">Python</li>
-            <li class="skills__list-item btn btn--plain">Cybersecurity</li>
-            <li class="skills__list-item btn btn--plain">MySQL</li>
-            <li class="skills__list-item btn btn--plain">Git</li>
-            <li class="skills__list-item btn btn--plain">Linux</li>
-            <li class="skills__list-item btn btn--plain">Docker</li>
-            <li class="skills__list-item btn btn--plain">AWS</li>
-            <li class="skills__list-item btn btn--plain">REST API design</li>
-            <li class="skills__list-item btn btn--plain">Technical Documentation</li>
-            <li class="skills__list-item btn btn--plain">Storyblok</li>
-        </ul>
-    </section>
-
-    <!-- Contact -->
-    <section class="section contact center" id="contact">
-        <h2 class="section__title">Contact</h2>
-        <span class="btn btn--outline">Email: Bradyhession@gmail.com</span>
-    </section>
-</main>
-
-<footer class="footer">
-    <a
-            href="https://github.com/NeverKnowz"
-            class="link footer__link"
-    >
-        Created By Brady Hession
-    </a>
-</footer>
-
-<div class="scroll-container">
-    <div class="scroll-top">
-        <a aria-label="Scroll up" href="#top">
-            <i aria-hidden="true" class="fas fa-arrow-up"></i>
-        </a>
-    </div>
-</div>
-
-<script src="./script.js"></script>
 </body>
+
 </html>
